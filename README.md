@@ -13,7 +13,7 @@ Run `npm start` for a dev server. Navigate to `http://localhost:4200/ui`. The ap
 ## Run test cases 
  Run `npm test`
 
- Open coverage folder in the root directory which will be generated after the above command and then open idex.html file which give you the coverage of application 
+Open coverage folder in the root directory which will be generated after the above command then navigate to user-dashboard folder and then open index.html in browser file which give you the coverage of application 
 
 ## Test logins
 
