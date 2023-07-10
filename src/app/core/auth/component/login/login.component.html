@@ -1,0 +1,20 @@
+<div class="user-login">
+  <form [formGroup]="loginForm" class="width-100">
+    <div>
+      <mat-form-field class="width-100">
+        <mat-label>User name</mat-label>
+        <input formControlName="username" type="text" matInput placeholder="Ex. sakshikatyayen" />
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field class="width-100">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput placeholder="enter min 8 chars" formControlName="password"/>
+      </mat-form-field>
+    </div>
+    <button class="width-100 login-btn" mat-raised-button color="primary" (click)="login()">
+      Login
+    </button>
+  </form>
+</div>

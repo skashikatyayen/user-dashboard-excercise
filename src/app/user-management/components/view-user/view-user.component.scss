@@ -1,0 +1,29 @@
+$color-purple: #673ab7;
+.view-user{
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+.align-inline{
+display: flex;
+}
+
+.ml20{
+    margin-left: 10px;
+    line-height: 24px !important;
+}
+.view-header{
+display: flex;
+background-color: $color-purple ;
+padding-left: 16px;
+padding-top:16px;
+color: white;
+}
+.view-wrap{
+    width: 400px;
+    height: 200px;
+}
+.mt20{
+    margin-top: 20px;
+}

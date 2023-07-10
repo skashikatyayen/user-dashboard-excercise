@@ -1,0 +1,37 @@
+$color-purple: #673ab7;
+
+.row-link {
+  text-decoration: none;
+  color: $color-purple;
+}
+.search-wrap {
+  margin-top: 30px;
+  display: flex;
+  width: 100%;
+}
+.width-50 {
+  width: 50%;
+}
+.align-end {
+  text-align: end;
+  margin-right: 50px;
+}
+.ml30 {
+  margin-left: 30px;
+}
+
+.users-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+.users-table {
+  overflow: auto;
+  max-height: calc(100vh - 200px);
+}
+.mat-mdc-form-field-input-control.mat-mdc-form-field-input-control{
+    font-size: 12px;
+}
+.width-350{
+width: 350px;
+}

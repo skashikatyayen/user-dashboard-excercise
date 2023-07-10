@@ -1,0 +1,28 @@
+<div *ngIf="userObj" class="view-user">
+ 
+    <mat-card class="view-wrap">
+        <div class="view-header">
+            <h3> User Details</h3>
+        </div>
+        <mat-card-content class="mt20"> 
+            <div class="align-inline">
+                <h4>Name:</h4> <h5 class="ml20">{{userObj.name}}</h5>
+                </div>
+                <div class="align-inline">
+                <h4>Email:</h4><h5 class="ml20">{{userObj.email}}</h5>
+                </div>
+                <div class="align-inline">
+                <h4>Role:</h4><h5 class="ml20">{{userObj && userObj.role && userRoles[userObj.role] && userRoles[userObj.role].name
+                    ? userRoles[userObj.role].name
+                    : userObj.role}}
+
+                    
+                </h5>
+                </div>
+        </mat-card-content>
+      </mat-card>
+
+
+
+
+</div>

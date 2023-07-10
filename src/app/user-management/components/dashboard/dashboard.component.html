@@ -1,0 +1,83 @@
+<div>
+  <div class="search-wrap">
+    <div class="width-50 ml30">
+      <mat-form-field
+        appearance="outline"
+        floatLabel="always"
+        class="width-350"
+      >
+        <mat-label>Search Users</mat-label>
+        <input
+          matInput
+          placeholder="Search by name,email and role"
+          #input
+          (keyup)="filterUsers(input.value)"
+        />
+      </mat-form-field>
+    </div>
+    <div class="width-50 align-end">
+      <button mat-fab extended color="primary" (click)="addUser()">
+        <mat-icon>add</mat-icon>
+        Add User
+      </button>
+    </div>
+  </div>
+  <div class="users-container">
+    <mat-table
+      #table
+      [dataSource]="usersDataSource"
+      matSort
+      class="mat-cell users-table"
+      (scroll)="onTableScroll($event)"
+    >
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header
+          >User Name</mat-header-cell
+        >
+        <mat-cell *matCellDef="let row">
+          <a class="row-link" [routerLink]="['/users/view/user', row.id]">
+            {{ row.name }}
+          </a>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef mat-sort-header
+          >Email</mat-header-cell
+        >
+        <mat-cell *matCellDef="let row"> {{ row.email }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="role">
+        <mat-header-cell *matHeaderCellDef mat-sort-header
+          >Role</mat-header-cell
+        >
+        <mat-cell *matCellDef="let row">
+          {{
+            userRoles[row.role] && userRoles[row.role].name
+              ? userRoles[row.role].name
+              : row.role
+          }}</mat-cell
+        >
+      </ng-container>
+
+      <!-- actions -->
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+
+        <mat-cell *matCellDef="let row; let i = index">
+          <button mat-icon-button color="primary" (click)="editUser(row)">
+            <mat-icon aria-label="Edit">edit</mat-icon>
+          </button>
+
+          <button mat-icon-button color="primary" (click)="deleteUser(row)">
+            <mat-icon aria-label="Delete">delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+  </div>
+</div>
