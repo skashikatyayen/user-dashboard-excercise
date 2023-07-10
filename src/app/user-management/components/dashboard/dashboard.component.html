@@ -11,12 +11,13 @@
           matInput
           placeholder="Search by name,email and role"
           #input
+          class="user-search"
           (keyup)="filterUsers(input.value)"
         />
       </mat-form-field>
     </div>
     <div class="width-50 align-end">
-      <button mat-fab extended color="primary" (click)="addUser()">
+      <button mat-fab extended color="primary" class="add-user-btn" (click)="addUser()">
         <mat-icon>add</mat-icon>
         Add User
       </button>
@@ -66,11 +67,11 @@
         <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
 
         <mat-cell *matCellDef="let row; let i = index">
-          <button mat-icon-button color="primary" (click)="editUser(row)">
+          <button mat-icon-button color="primary" class="edit-user-btn" (click)="editUser(row)">
             <mat-icon aria-label="Edit">edit</mat-icon>
           </button>
 
-          <button mat-icon-button color="primary" (click)="deleteUser(row)">
+          <button mat-icon-button color="primary" class="delete-user-btn" (click)="deleteUser(row)">
             <mat-icon aria-label="Delete">delete</mat-icon>
           </button>
         </mat-cell>

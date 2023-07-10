@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
   usersList: Array<UserDetails> = [];
   usersListAll: Array<UserDetails> = [];
   displayedColumns = ['name', 'email', 'role', 'actions'];
-  usersDataSource = new MatTableDataSource(this.usersList);
+  usersDataSource = new MatTableDataSource(this.usersList); //creating Material Table datasource from userList
   userRoles = ROLES;
   usersLoading = false; //to prevent multiple api calls while scrolling
   constructor(
@@ -46,7 +46,7 @@ export class DashboardComponent implements OnInit {
           this.usersList = [...this.usersList, ...res];
         }
   
-        this.usersDataSource.data = this.usersList;
+        this.usersDataSource.data = this.usersList; //update the Material datable source data with updated userList
         
       },
       complete: ()=>{
