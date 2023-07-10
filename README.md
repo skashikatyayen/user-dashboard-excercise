@@ -15,3 +15,9 @@ Run `npm start` for a dev server. Navigate to `http://localhost:4200/ui`. The ap
 
  Open coverage folder in the root directory which will be generated after the above command and then open idex.html file which give you the coverage of application 
 
+## Test logins
+
+http://localhost:4200/ui/login
+
+Admin: sakshikatyayen@test.com -- Have add/edit/delete user permissions also
+User: Moshe_Mayert@yahoo.com -- Have view permissions only
